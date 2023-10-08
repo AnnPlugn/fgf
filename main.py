@@ -75,88 +75,6 @@ def print_exel():
     print(new_df)
     return
 
-
-def op_plus():
-    number_a = int(input('a: '))
-    number_b = int(input('b: '))
-    print('a + b =', number_a + number_b)
-
-    save_result('a + b', number_a + number_b)
-    return
-
-def op_minus():
-    number_a = int(input('a: '))
-    number_b = int(input('b: '))
-    print('a - b =', number_a - number_b)
-    save_result('a - b', number_a - number_b)
-    return
-
-def op_ymn():
-    number_a = int(input('a: '))
-    number_b = int(input('b: '))
-    print('a * b =', number_a * number_b)
-    save_result('a * b', number_a * number_b)
-    return
-
-def op_del():
-    number_a = int(input('a: '))
-    number_b = int(input('b: '))
-    if number_b != 0:
-        print('a / b =', number_a / number_b)
-        save_result('a / b', number_a / number_b)
-    return
-
-def op_chel_del():
-    number_a = int(input('a: '))
-    number_b = int(input('b: '))
-    if number_b != 0:
-        print('a // b =', number_a // number_b)
-        save_result('a // b', number_a // number_b)
-    return
-
-def op_ost():
-    number_a = int(input('a: '))
-    number_b = int(input('b: '))
-    if number_b != 0:
-        print('a % b =', number_a % number_b)
-        save_result('a % b', number_a % number_b)
-    return
-
-def op_switch():
-    number_a = int(input('a: '))
-    print('a * -1 = ', number_a * -1)
-    save_result('a * -1', number_a * -1)
-    return
-
-def op_abs():
-    number_a = int(input('a: '))
-    print('abs(a) =', abs(number_a))
-    save_result('abs(a)', abs(number_a))
-    return
-
-def op_divmod():
-    number_a = int(input('a: '))
-    number_b = int(input('b: '))
-    if number_b != 0:
-        print('a // b, a % b =', divmod(number_a, number_b))
-        save_result('a // b, a % b', divmod(number_a, number_b))
-    return
-
-def op_step():
-    number_a = int(input('a: '))
-    number_b = int(input('b: '))
-    print('a ** b =', number_a ** number_b)
-    save_result('a ** b', number_a ** number_b)
-    return
-
-def op_pow():
-    number_a = int(input('a: '))
-    number_b = int(input('b: '))
-    number_c = int(input('c: '))
-    print('pow(a, b, c) =', pow(number_a, number_b, number_c))
-    save_result('pow(a, b, c)', pow(number_a, number_b, number_c))
-    return
-
 def gen_list():
     my_list = []
     for i in range(120):
@@ -197,33 +115,21 @@ def main():
     run = True
     commands = """==========================================================================
 1. Создать таблицу и БД в MySQL.
-2. Ввести числа с клавиатуры и суммировать их, результат сохранить в MySQL.
-3. Ввести числа с клавиатуры и вычесть одно число из другого, результат сохранить в MySQL.
-4. Ввести числа с клавиатуры и умножить их, результат сохранить в MySQL.
-5. Ввести числа с клавиатуры и найти частное, результат сохранить в MySQL.
-6. Ввести числа с клавиатуры и получить целую часть от деления, результат сохранить в MySQL.
-7. Ввести числа с клавиатуры и получить остаток от деления, результат сохранить в MySQL.
-8. Ввести число с клавиатуры и возвести его в степень, результат сохранить в MySQL.
-9. Ввести число с клавиатуры и возвести его в степень с возможностью деления по модулю, результат сохранить в MySQL.
-10. Сгенерировать один список длиной 120 значений, результат сохранить в MySQL.
-11. Вывести длину списка, результат сохранить в MySQL.
-12. Вывести сумму элементов списка, результат сохранить в MySQL.
-13. Вывести среднее значение элементов списка, результат сохранить в MySQL.  
-14. Все результаты вывести на экран из MySQL.
-15. Сохранить все данные из MySQL в Excel.
-16. Вывести все данные на экран из Excel.
-17. Завершить"""
+2. Сгенерировать один список длиной 120 значений, результат сохранить в MySQL.
+3. Вывести длину списка, результат сохранить в MySQL.
+4. Вывести сумму элементов списка, результат сохранить в MySQL.
+5. Вывести среднее значение элементов списка, результат сохранить в MySQL.  
+6. Все результаты вывести на экран из MySQL.
+7. Сохранить все данные из MySQL в Excel.
+8. Вывести все данные на экран из Excel.
+9. Завершить"""
     while run:
         run = universal.uni(commands,
-                      check_db, op_plus, op_minus,
-                      op_ymn, op_del, op_chel_del,
-                      op_ost, op_step, op_pow, gen_list,
+                      check_db, gen_list,
                       len_list, sum_list, avg_list,
                       print_db, save_db_to_xlsx, print_exel)
     return
 
 if __name__ == '__main__':
     main()
-
-
 
